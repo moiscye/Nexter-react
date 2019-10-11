@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 
 import "./App.scss";
+import "bootstrap/dist/css/bootstrap.min.css";
+
+import { connect } from "react-redux";
+import * as actions from "../../actions";
 
 import Header from "../../components/Header";
 import Realtors from "../../components/Realtors";
@@ -11,7 +15,10 @@ import Homes from "../../components/Homes";
 import Gallery from "../../components/Gallery";
 import Footer from "../../components/Footer";
 
-export default class App extends Component {
+class App extends Component {
+  componentDidMount() {
+    this.props.fetchUser();
+  }
   render() {
     return (
       <div className="container">
@@ -27,3 +34,8 @@ export default class App extends Component {
     );
   }
 }
+
+export default connect(
+  null,
+  actions
+)(App);

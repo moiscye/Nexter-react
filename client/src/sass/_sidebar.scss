@@ -5,8 +5,26 @@
   grid-row: 1 / 2;
 
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
+}
+
+.user {
+  display: flex;
+  margin-left: 2rem;
+  &__name {
+    // align-self: flex-start;
+    margin-left: 1rem;
+    font-family: $font-display;
+    font-size: 1.8rem;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  &__logo {
+    fill: #fff;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
 }
 
 .navigation {
@@ -19,6 +37,7 @@
   &__link:link,
   &__link:visited {
     font-family: $font-display;
+    font-size: 1.5rem;
     text-align: center;
     color: #fff;
     text-decoration: none;
