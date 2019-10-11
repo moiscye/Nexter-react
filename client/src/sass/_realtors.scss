@@ -1,0 +1,81 @@
+.realtors {
+  background-color: $color-secondary;
+  grid-column: col-start 7 / full-end;
+  overflow: hidden;
+  padding: 3rem;
+
+  display: grid;
+  //align-content and justify-content aligns the whole grid in relation
+  //with the parent element
+  align-content: center;
+  justify-content: center;
+
+  //justify-items and align-items aligns the inner elements of the grid.The aligment is
+  //in relation to the  grid itself.
+  justify-items: center;
+  align-items: center;
+  // row-gap: 2rem;
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-column: full-start / full-end;
+  }
+  &__align {
+    display: inline-block;
+  }
+  &__list {
+    overflow-y: hidden;
+    padding: 1rem 3rem;
+    max-height: 60%;
+    display: grid;
+    grid-template-columns: min-content max-content;
+    column-gap: 2rem;
+    row-gap: 5vh;
+    // justify-content: center;
+    align-items: center;
+    transition: all 0.4s;
+    &:hover {
+      overflow-y: auto;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+      grid-template-columns: repeat(3, min-content max-content);
+      font-size: 1.9rem;
+      column-gap: 2rem;
+    }
+    @media only screen and (max-width: $bp-medium-low) {
+      font-size: 1.6rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      grid-template-columns: min-content max-content;
+      font-size: 1.9rem;
+    }
+  }
+
+  &__img {
+    // height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+    display: block;
+  }
+
+  &__details {
+    @media only screen and (max-width: $bp-medium) {
+      &:not(:last-child) {
+        margin-right: 3rem;
+      }
+    }
+
+    @media only screen and (max-width: $bp-medium-low) {
+      &:not(:last-child) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__sold {
+    text-transform: capitalize;
+    color: $color-grey-light-2;
+    margin-top: -3px;
+  }
+}

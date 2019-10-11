@@ -1,0 +1,35 @@
+.features {
+  grid-column: center-start / center-end;
+
+  margin: 15rem 0;
+
+  display: grid;
+  //static number of columns
+  //grid-template-columns: repeat(3, 1fr);
+  //responsive number of columns and responsive size from 25rem to 1fr
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-gap: 6rem;
+  //aligns vertically the elements so the text starts at the same line
+  align-items: start;
+}
+
+.feature {
+  //nested grid to separate the icon from the text
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  row-gap: 1.5rem;
+  column-gap: 2.5rem;
+  &__icon {
+    height: 4.5rem;
+    width: 2.5rem;
+    fill: $color-primary;
+    //vertically assign 2 row so the icon occupies the
+    //rows. Noticed that we cant use -1 to indicate the
+    //last row cuz the size of the grid is implicid.
+    grid-row: 1 / span 2;
+    transform: translateY(-1rem);
+  }
+  &__text {
+    font-size: 1.7rem;
+  }
+}

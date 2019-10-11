@@ -1,0 +1,21 @@
+.form {
+  max-width: 400px;
+  background-color: #cccccc;
+  padding: 50px;
+
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  grid-gap: 16px;
+
+  &__label {
+    grid-column: 1 / 2;
+  }
+
+  &__input,
+  &__button {
+    grid-column: 2 / 3;
+  }
+  &__button {
+    margin-top: 20px;
+  }
+}

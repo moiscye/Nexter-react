@@ -1,0 +1,82 @@
+.story {
+  &__pictures {
+    //background-color: $color-primary;
+    background-image: linear-gradient(
+        rgba($color-primary, 0.5),
+        rgba($color-primary, 0.5)
+      ),
+      url(../img/back.jpg);
+    background-size: cover;
+    grid-column: full-start / col-end 4;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    align-items: center;
+
+    @media only screen and (max-width: $bp-medium) {
+      grid-column: full-start / full-end;
+      padding: 6rem;
+    }
+  }
+
+  &__img--1 {
+    width: 100%;
+    grid-row: 2 / 6;
+    grid-column: 2 /6;
+    box-shadow: 0 2rem 5rem rgba(#000000, 0.1);
+    @media only screen and (max-width: $bp-medium) {
+      grid-column: 1 /5;
+      grid-row: 1 / -1;
+    }
+  }
+
+  &__img--2 {
+    width: 115%;
+    z-index: 10;
+    grid-row: 4 / 6;
+    grid-column: 4 /-1;
+    //transform: translateX(5rem);
+    box-shadow: 0 2rem 5rem rgba(#000000, 0.2);
+    @media only screen and (max-width: $bp-medium) {
+      grid-row: 1 / -1;
+      width: 100%;
+    }
+  }
+
+  &__content {
+    background-color: $color-grey-light-1;
+    font-size: 1.5rem;
+    font-style: italic;
+    grid-column: col-start 5 / full-end;
+
+    //initially 12rem fro sides but for auto resizing
+    //we use the view port width again for responsiveness
+    padding: 6rem 8vw;
+
+    /* center content vertically with flex
+    display: flex;
+    flex-direction: column;
+    //aligns content in the center of  the y axis
+    justify-content: center;
+    //aligns content at the start of  the x axis
+    align-items: flex-start;
+*/
+
+    /* center content vertically with grid*/
+    display: grid;
+    //aligns the rows
+    align-content: center;
+    //aligns the columns
+    justify-items: start;
+
+    @media only screen and (max-width: $bp-medium) {
+      grid-column: full-start / full-end;
+      grid-row: 5 / 6;
+      font-size: 1.8rem;
+    }
+  }
+
+  &__text {
+    margin-bottom: 4rem;
+  }
+}

@@ -1,0 +1,34 @@
+.sidebar {
+  background-color: $color-primary;
+
+  grid-column: full-start / full-end;
+  grid-row: 1 / 2;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.navigation {
+  align-self: stretch;
+  justify-self: stretch;
+  display: flex;
+  list-style: none;
+  text-transform: uppercase;
+
+  &__link:link,
+  &__link:visited {
+    font-family: $font-display;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    padding: 1.5rem;
+    display: block;
+    transition: all 0.2s;
+  }
+
+  &__link:hover,
+  &__link:visited {
+    background-color: rgba($color-secondary, 0.5);
+  }
+}
