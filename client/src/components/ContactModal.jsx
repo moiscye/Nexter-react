@@ -28,8 +28,6 @@ export default class ContactModal extends Component {
     console.log("this.state", this.state);
     this.props.handleClose();
     axios.post("/api/contact", this.state.contactDetails);
-    // this.props.loginUser(this.state);
-    // this.props.history.push("/");
   };
 
   render() {
@@ -47,7 +45,6 @@ export default class ContactModal extends Component {
                   <Form.Control
                     placeholder="Full Name"
                     onChange={this.handleChange}
-                    // id="fullName"
                   />
                 </Form.Group>
                 <Form.Group as={Col} controlId="phoneNumber">
@@ -55,7 +52,6 @@ export default class ContactModal extends Component {
                   <Form.Control
                     placeholder="Phone Number"
                     onChange={this.handleChange}
-                    //id="phoneNumber"
                   />
                 </Form.Group>
               </Form.Row>
@@ -66,7 +62,6 @@ export default class ContactModal extends Component {
                     type="email"
                     placeholder="name@example.com"
                     onChange={this.handleChange}
-                    //id="email"
                   />
                 </Form.Group>
 
@@ -75,7 +70,6 @@ export default class ContactModal extends Component {
                   <Form.Control
                     placeholder="Property"
                     onChange={this.handleChange}
-                    // id="property"
                   />
                 </Form.Group>
               </Form.Row>
@@ -85,7 +79,6 @@ export default class ContactModal extends Component {
                   as="textarea"
                   rows="3"
                   onChange={this.handleChange}
-                  // id="message"
                 />
               </Form.Group>
             </Form>
