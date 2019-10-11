@@ -22,7 +22,7 @@ module.exports = app => {
     //this route redirects to the surveys route
     //which belogs to the front end
     (req, res) => {
-      res.redirect("/api/current_user");
+      res.redirect("/");
     }
   );
 
