@@ -35,7 +35,4 @@ module.exports = app => {
   app.get("/api/current_user", (req, res) => {
     res.send(req.user);
   });
-  app.get("/", (req, res) => {
-    res.send({ welcome: "Welcome to Nexter" });
-  });
 };

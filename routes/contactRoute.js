@@ -12,14 +12,14 @@ module.exports = app => {
     const { property, email, message } = req.body;
     console.log(req.body);
 
-    // sgMail.setApiKey(keys.sendGridKey);
-    // const msg = {
-    //   to: "moiscye@gmail.com",
-    //   from: email,
-    //   subject: property,
-    //   text: "message field",
-    //   html: contactEmail(req.body)
-    // };
-    // sgMail.send(msg);
+    sgMail.setApiKey(keys.sendGridKey);
+    const msg = {
+      to: "moiscye@gmail.com",
+      from: email,
+      subject: property,
+      text: "message field",
+      html: contactEmail(req.body)
+    };
+    sgMail.send(msg);
   });
 };
