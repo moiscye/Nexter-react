@@ -9,8 +9,7 @@ module.exports = app => {
   });
 
   app.post("/api/contact", async (req, res) => {
-    const { property, email, message } = req.body;
-    console.log(req.body);
+    const { property, email } = req.body;
 
     sgMail.setApiKey(keys.sendGridKey);
     const msg = {

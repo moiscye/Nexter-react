@@ -35,7 +35,7 @@ export default class ContactModal extends Component {
       <>
         <Modal show={this.props.show} onHide={this.props.handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Modal heading</Modal.Title>
+            <Modal.Title>Contact Form</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <Form>
