@@ -15,6 +15,7 @@
   }
 
   &__link:link,
+  &__link,
   &__link:visited {
     font-size: 1.4rem;
     font-family: $font-display;
@@ -28,6 +29,7 @@
 
   &__link:hover,
   &__link:visited {
+    cursor: pointer;
     background-color: rgba(#fff, 0.5);
     transform: translateY(-3px);
   }

@@ -11,7 +11,9 @@ const Header = () => {
       <img src={logo} alt="Nexter logo" className="header__logo" />
       <h3 className="heading-3">Your own home:</h3>
       <h1 className="heading-1">The ultimate personal freedom</h1>
-      <button className="btn header__btn">View our properties</button>
+      <a href="#homes" className="btn header__btn">
+        View our properties
+      </a>
       <div className="header__seenon-text">As seen on</div>
       <div className="header__seenon-logos">
         <img src={logobbc} alt="Seen on logo 1" />

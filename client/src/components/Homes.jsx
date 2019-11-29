@@ -92,11 +92,7 @@ const Homes = () => {
       <ContactModal show={showM} handleClose={handleClose} />
       {houseList.map(({ location, name, image, price, rooms, area }, id) => (
         <div className="home" key={id}>
-          <img
-            src={require(`../img/${image}`)}
-            alt={`House ${id + 1}`}
-            className="home__img"
-          />
+          <img src={require(`../img/${image}`)} alt={`House ${id + 1}`} className="home__img" />
           <HeartLogo className="home__like" />
           <h5 className="home__name">{name}</h5>
           <div className="home__location">
@@ -120,16 +116,8 @@ const Homes = () => {
             <Logo4 />
             <p>{price}</p>
           </div>
-          {/* <button type="button" className="btn home__btn" onClick={handleShow}>
-            Contact Realtor
-          </button> */}
-          <Button
-            size="lg"
-            block
-            variant="primary"
-            onClick={handleShow}
-            className="home__btn"
-          >
+
+          <Button size="lg" block variant="primary" onClick={handleShow} className="home__btn">
             Contact Realtor
           </Button>
         </div>

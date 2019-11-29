@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
-import "./App.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.scss";
 
 import { connect } from "react-redux";
 import * as actions from "../../actions";
@@ -35,7 +35,4 @@ class App extends Component {
   }
 }
 
-export default connect(
-  null,
-  actions
-)(App);
+export default connect(null, actions)(App);
