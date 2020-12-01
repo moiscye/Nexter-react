@@ -1,42 +1,13 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
-import * as actions from "../actions";
 import { ReactComponent as Logo } from "../img/SVG/profile-male.svg";
 
 class Sidebar extends Component {
-  renderContent = () => {
-    switch (this.props.auth) {
-      case null:
-        return;
-      case false:
-        return (
-          <li className="navigation__item">
-            <a href="/auth/google" className="navigation__link">
-              Sign In With Google
-            </a>{" "}
-          </li>
-        );
-      default:
-        return (
-          <>
-            <li className="navigation__item">
-              <a href="/api/logout" className="navigation__link">
-                Log Out
-              </a>{" "}
-            </li>
-          </>
-        );
-    }
-  };
-
   render() {
-    const user = this.props.auth ? (
+    const user = (
       <div className="user">
         <Logo className="user__logo" />
-        <div className="user__name">{this.props.auth.name}</div>
+        <div className="user__name">Guest</div>
       </div>
-    ) : (
-      <div></div>
     );
     return (
       <div className="sidebar">
@@ -68,18 +39,10 @@ class Sidebar extends Component {
               About us
             </a>{" "}
           </li>
-          {this.renderContent()}
         </ul>
       </div>
     );
   }
 }
 
-const mapStateToProps = ({ auth }) => {
-  return { auth };
-};
-
-export default connect(
-  mapStateToProps,
-  actions
-)(Sidebar);
+export default Sidebar;

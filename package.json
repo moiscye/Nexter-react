@@ -12,7 +12,9 @@
     "server": "nodemon index.js",
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client &&  npm run build --prefix client"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client &&  npm run build --prefix client",
+    "lambda-serve": "netlify-lambda serve functions",
+    "lambda-build": "netlify-lambda build functions"
   },
   "author": "",
   "license": "ISC",
@@ -24,6 +26,7 @@
     "express": "^4.17.1",
     "lodash": "^4.17.15",
     "mongoose": "^5.7.5",
+    "netlify-lambda": "^2.0.1",
     "nodemon": "^1.19.3",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^2.0.0"

@@ -3,9 +3,6 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.scss";
 
-import { connect } from "react-redux";
-import * as actions from "../../actions";
-
 import Header from "../../components/Header";
 import Realtors from "../../components/Realtors";
 import Sidebar from "../../components/Sidebar";
@@ -16,9 +13,6 @@ import Gallery from "../../components/Gallery";
 import Footer from "../../components/Footer";
 
 class App extends Component {
-  componentDidMount() {
-    this.props.fetchUser();
-  }
   render() {
     return (
       <div className="container">
@@ -35,4 +29,4 @@ class App extends Component {
   }
 }
 
-export default connect(null, actions)(App);
+export default App;

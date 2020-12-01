@@ -11,23 +11,23 @@ export default class ContactModal extends Component {
         phoneNumber: "",
         property: "",
         email: "",
-        message: ""
-      }
+        message: "",
+      },
     };
   }
-  handleChange = e => {
+  handleChange = (e) => {
     var data = { ...this.state.contactDetails };
     data[e.target.id] = e.target.value;
     this.setState({
-      contactDetails: data
+      contactDetails: data,
     });
   };
 
-  handleSubmit = async e => {
+  handleSubmit = async (e) => {
     e.preventDefault();
     console.log("this.state", this.state);
     this.props.handleClose();
-    axios.post("/api/contact", this.state.contactDetails);
+    axios.post("/.netlify/functions/getincontact", this.state.contactDetails);
   };
 
   render() {
