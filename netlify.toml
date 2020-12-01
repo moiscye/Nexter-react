@@ -4,11 +4,11 @@
   publish = "build" # create-react-app builds to this folder, Netlify should serve all these files statically
 
 [[redirects]]
-  from = “/*”
-  to = “/index.html”
+  from = "/*"
+  to = "/index.html"
   status = 200
 
 [[headers]]
-  for = “/"
+  for = "/*"
     [headers.values]
-    Access-Control-Allow-Origin = "”
+    Access-Control-Allow-Origin = "*"
