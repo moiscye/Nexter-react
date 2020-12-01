@@ -29,7 +29,7 @@ export default class ContactModal extends Component {
     console.log("this.state", this.state);
     this.props.handleClose();
     axios.post(
-      `${proxyUrl}.netlify/functions/getincontact`,
+      `${proxyUrl}/.netlify/functions/getincontact`,
       this.state.contactDetails
     );
   };
