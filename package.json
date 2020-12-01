@@ -11,7 +11,7 @@
     "lambda-serve": "netlify-lambda serve functions",
     "lambda-build": "netlify-lambda build functions",
     "build": "run-p build:**",
-    "build:app": "react-scripts client/build",
+    "build:app": "npm run build --prefix client",
     "build:lambda": "netlify-lambda build functions"
   },
   "author": "",
