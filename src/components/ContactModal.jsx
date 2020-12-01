@@ -24,10 +24,14 @@ export default class ContactModal extends Component {
   };
 
   handleSubmit = async (e) => {
+    const proxyUrl = "https://cors-anywhere.herokuapp.com/";
     e.preventDefault();
     console.log("this.state", this.state);
     this.props.handleClose();
-    axios.post("/.netlify/functions/getincontact", this.state.contactDetails);
+    axios.post(
+      `${proxyUrl}/.netlify/functions/getincontact`,
+      this.state.contactDetails
+    );
   };
 
   render() {

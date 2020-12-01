@@ -16,7 +16,6 @@ exports.handler = async (event) => {
     };
 
     sgMail.send(msg);
-    body.statusCode = 200;
     return body;
   };
 
@@ -26,7 +25,7 @@ exports.handler = async (event) => {
     if (body) {
       body = sendEmail(body);
       response = {
-        statusCode: body.statusCode ? body.statusCode : 500,
+        statusCode: 200,
         body: JSON.stringify(body),
       };
     }
