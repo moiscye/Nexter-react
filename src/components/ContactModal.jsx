@@ -27,7 +27,7 @@ export default class ContactModal extends Component {
     e.preventDefault();
     console.log("this.state", this.state);
     this.props.handleClose();
-    axios.post(`/.netlify/functions/getincontact`, this.state.contactDetails);
+    axios.post(`/.netlify/functions/contact`, this.state.contactDetails);
   };
 
   render() {
