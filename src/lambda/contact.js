@@ -20,9 +20,12 @@ exports.handler = async (event) => {
   };
 
   if (event.httpMethod == "POST") {
+    console.log("in POST");
     let body = event.body ? JSON.parse(event.body) : {};
     let response;
     if (body) {
+      console.log(body);
+      console.log(sendGridKey.substring(9));
       body = sendEmail(body);
       response = {
         statusCode: 200,
@@ -33,6 +36,7 @@ exports.handler = async (event) => {
   }
 
   if (event.httpMethod == "GET") {
+    console.log("in GET");
     let response = {
       statusCode: 200,
       body: "Testing message",
