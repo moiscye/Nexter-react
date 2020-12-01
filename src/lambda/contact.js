@@ -40,7 +40,7 @@ exports.handler = async (event) => {
   if (event.httpMethod == "GET") {
     let response = {
       statusCode: 200,
-      body: JSON.stringify(body),
+      body: "Testing message",
     };
     return response;
   }
