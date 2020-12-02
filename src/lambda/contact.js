@@ -3,7 +3,7 @@ const contactEmail = require("./emailTemplates/contactEmail");
 exports.handler = async (event) => {
   const sendGridKey = process.env.SEND_GRID_KEY;
 
-  const sendEmail = (body) => {
+  const sendEmail = async (body) => {
     const { property, email } = body;
     sgMail.setApiKey(sendGridKey);
     let xyz = contactEmail(body);
@@ -16,10 +16,14 @@ exports.handler = async (event) => {
       html: xyz,
     };
 
-    console.log(xyz.substring(10, 300));
-    sgMail.send(msg);
-    console.log(xyz.substring(300, 310));
-    return body;
+    try {
+      sgMail.send(msg);
+      return body;
+    } catch (error) {
+      if (error.response) {
+        return error.response.body;
+      }
+    }
   };
 
   if (event.httpMethod == "POST") {
