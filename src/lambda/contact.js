@@ -6,14 +6,13 @@ exports.handler = async (event) => {
   const sendEmail = async (body) => {
     const { property, email } = body;
     sgMail.setApiKey(sendGridKey);
-    let xyz = contactEmail(body);
 
     const msg = {
       to: "moiscye@gmail.com",
       from: email,
       subject: property,
       text: "message field",
-      html: xyz,
+      html: contactEmail(body),
     };
 
     try {
@@ -28,9 +27,7 @@ exports.handler = async (event) => {
   };
 
   if (event.httpMethod == "POST") {
-    console.log("in POST");
     let body = event.body ? JSON.parse(event.body) : {};
-    console.log(body);
     let response;
     if (body) {
       body = await sendEmail(body);
@@ -39,15 +36,6 @@ exports.handler = async (event) => {
         body: JSON.stringify(body),
       };
     }
-    return response;
-  }
-
-  if (event.httpMethod == "GET") {
-    console.log("in GET");
-    let response = {
-      statusCode: 200,
-      body: "Testing message",
-    };
     return response;
   }
 };
