@@ -17,10 +17,11 @@ exports.handler = async (event) => {
     };
 
     try {
-      sgMail.send(msg);
+      await sgMail.send(msg);
       return body;
     } catch (error) {
       if (error.response) {
+        console.error(error.response);
         return error.response.body;
       }
     }
@@ -29,9 +30,10 @@ exports.handler = async (event) => {
   if (event.httpMethod == "POST") {
     console.log("in POST");
     let body = event.body ? JSON.parse(event.body) : {};
+    console.log(body);
     let response;
     if (body) {
-      body = sendEmail(body);
+      body = await sendEmail(body);
       response = {
         statusCode: 200,
         body: JSON.stringify(body),
