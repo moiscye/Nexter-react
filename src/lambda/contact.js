@@ -5,17 +5,20 @@ exports.handler = async (event) => {
 
   const sendEmail = (body) => {
     const { property, email } = body;
-
     sgMail.setApiKey(sendGridKey);
+    let xyz = contactEmail(body);
+
     const msg = {
       to: "moiscye@gmail.com",
       from: email,
       subject: property,
       text: "message field",
-      html: contactEmail(body),
+      html: xyz,
     };
 
+    console.log(xyz.substring(10, 300));
     sgMail.send(msg);
+    console.log(xyz.substring(300, 310));
     return body;
   };
 
@@ -24,8 +27,6 @@ exports.handler = async (event) => {
     let body = event.body ? JSON.parse(event.body) : {};
     let response;
     if (body) {
-      console.log(body);
-      console.log(sendGridKey.substring(9));
       body = sendEmail(body);
       response = {
         statusCode: 200,
