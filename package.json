@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@sendgrid/mail": "^7.4.0",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "babel-loader": "^8.0.6",
     "bootstrap": "^4.3.1",
     "node-sass": "^4.12.0",
