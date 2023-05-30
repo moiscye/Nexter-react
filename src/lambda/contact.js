@@ -2,7 +2,7 @@ const sgMail = require("@sendgrid/mail");
 const contactEmail = require("./emailTemplates/contactEmail");
 exports.handler = async (event) => {
   const sendGridKey = process.env.SEND_GRID_KEY;
-  console.log(event.body);
+  console.log("Event:", event.httpMethod);
   const headers = {
     "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Headers": "Content-Type",
