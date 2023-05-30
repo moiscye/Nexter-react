@@ -5,6 +5,7 @@ exports.handler = async (event) => {
   console.log("Event:", event.httpMethod);
   const headers = {
     "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Origin": "null",
     "Access-Control-Allow-Headers": "Content-Type",
     "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
   };
