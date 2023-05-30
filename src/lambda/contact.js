@@ -2,6 +2,30 @@ const sgMail = require("@sendgrid/mail");
 const contactEmail = require("./emailTemplates/contactEmail");
 exports.handler = async (event) => {
   const sendGridKey = process.env.SEND_GRID_KEY;
+  const headers = {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Headers": "Content-Type",
+    "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+  };
+  if (event.httpMethod === "OPTIONS") {
+    return {
+      statusCode: 200,
+      headers,
+      body: JSON.stringify({ message: "Successful preflight call." }),
+    };
+  } else if (event.httpMethod == "POST") {
+    let body = event.body ? JSON.parse(event.body) : {};
+    let response;
+    if (body) {
+      body = await sendEmail(body);
+      response = {
+        statusCode: 200,
+        headers,
+        body: JSON.stringify(body),
+      };
+    }
+    return response;
+  }
 
   const sendEmail = async (body) => {
     const { property, email } = body;
@@ -25,17 +49,4 @@ exports.handler = async (event) => {
       }
     }
   };
-
-  if (event.httpMethod == "POST") {
-    let body = event.body ? JSON.parse(event.body) : {};
-    let response;
-    if (body) {
-      body = await sendEmail(body);
-      response = {
-        statusCode: 200,
-        body: JSON.stringify(body),
-      };
-    }
-    return response;
-  }
 };
