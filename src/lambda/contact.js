@@ -28,7 +28,7 @@ exports.handler = async (event) => {
       response = {
         statusCode: 200,
         headers,
-        body: JSON.stringify(body),
+        body: { message: "Email sent." }
       };
     }
     return response;
