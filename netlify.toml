@@ -6,8 +6,8 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    Access-Control-Allow-Origin = "*"
-    Access-Control-Allow-Methods = '''
-    POST, PUT, PATCH, GET, DELETE, OPTIONS'''  
-    Access-Control-Allow-Headers = *
+  Access-Control-Allow-Origin = "*"
+  Access-Control-Allow-Methods = '''
+  POST, PUT, PATCH, GET, DELETE, OPTIONS'''  
+  Access-Control-Allow-Headers = *
     
